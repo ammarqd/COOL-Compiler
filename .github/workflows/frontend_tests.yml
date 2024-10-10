@@ -12,7 +12,7 @@ jobs:
 
     env:
       COOL_HOME: '.'
-      PATH: '/home/ammar-q/Cool-Compiler/bin/.orig/.Linux:${{ github.env.PATH }}:/home/ammar-q/Cool-Compiler/bin:${{ github.env.PATH }}'
+      PATH: '/bin/.orig/.Linux:${{ github.env.PATH }}:/bin:${{ github.env.PATH }}'
       
     steps:
       - name: Checkout code
