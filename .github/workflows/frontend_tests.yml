@@ -11,17 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: '21'
-        distribution: 'temurin'
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '21'
+          distribution: 'temurin'
 
-    - name: Build frontend
-      run: ./buildme frontend
+      - name: Build frontend
+        run: |
+          cd assignments/pa1/
+          buildme frontend
 
-    - name: Test lexer and parser
-      run: ./testme lexer parser
+      - name: Test lexer and parser
+        run: |
+          testme lexer parser
