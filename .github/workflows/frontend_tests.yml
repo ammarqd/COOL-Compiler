@@ -12,8 +12,8 @@ jobs:
 
     env:
       COOL_HOME: '.'
-      PATH: './bin/.orig/.Linux:./bin:${{ env.PATH }}'
-
+      PATH: '/home/ammar-q/Cool-Compiler/bin/.orig/.Linux:${{ github.env.PATH }}:/home/ammar-q/Cool-Compiler/bin:${{ github.env.PATH }}'
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
