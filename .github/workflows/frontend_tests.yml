@@ -1,0 +1,27 @@
+name: frontend_tests
+
+on:
+  push:
+    branches:
+      - main
+      - frontend
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Build frontend
+      run: ./buildme frontend
+
+    - name: Test lexer and parser
+      run: ./testme lexer parser
